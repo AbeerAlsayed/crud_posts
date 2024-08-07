@@ -1,9 +1,8 @@
 <?php
-//namespace App\Models;
+
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\CvsController;
-use Illuminate\Support\Facades\DB;
+
 
 
 /*
@@ -19,7 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('cv',[CvsController::class,'index'])->name('cv.index');
-Route::get('cv/create',[CvsController::class,'create'])->name('cv.create');
-Route::post('cv/store',[CvsController::class,'store'])->name('cv.store');
-Route::get('profile',[CvsController::class,'show']);
+Route::resource('posts',PostController::class);
